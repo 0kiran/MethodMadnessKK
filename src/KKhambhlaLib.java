@@ -19,6 +19,6 @@ public class KKhambhlaLib {
     }
 
     public static String vigCipher(String message, String key){
-        return
+        return "";
     }
 }
