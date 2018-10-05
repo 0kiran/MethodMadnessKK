@@ -1,5 +1,12 @@
 public class KKhambhlaLib {
+    // Kiran Khambhla
+    // Methods for MethodMadness Project
 
+    /**
+     * checks if a string is a Palindrome (spelled same forward and backward)
+     * @param str1 = string input
+     * @return true or false depending on if
+     */
     public static boolean isPalindrome(String str1){
         for(int i = 0; i < str1.length(); i++){
             for(int j = str1.length()-1; j > str1.length(); j--){
@@ -11,6 +18,11 @@ public class KKhambhlaLib {
         return true;
     }
 
+    /**
+     * changes the look of the date input
+     * @param date inputs the date with "/"
+     * @return date with "-"
+     */
     public static String dateStr(String date){
         String month = date.substring(0,2);
         String day = date.substring(3,5);
@@ -18,18 +30,24 @@ public class KKhambhlaLib {
         return day + " - " + month + " - " + year;
     }
 
-    public static String vigCipher(String message, String key){
-        String returnmessage = "";
-        for (int i = 0, j = 0; i < message.length(); i++) {
-            char letter = message.charAt(i);
-            if (letter < 'A' || letter > 'Z') {
-                returnmessage += (char) ((letter + key.charAt(j) - 2 * 'A') % 26 + 'A');
-                j = ++j % key.length();
-            }
+    /**
+     * returns the sum of all the numbers up to a number
+     * @param n the number you want to add up to
+     * @return the sum
+     */
+    public static int sumUpTo(int n){
+        int total = 0;
+        for(int i=0; i <= n; i++){
+            total += i;
         }
-        return returnmessage;
+        return total;
     }
 
+    /**
+     * checks if a number is a part of the Fibonacci sequence
+     * @param n the number you want to check
+     * @return true or false depending on whether it is or isn't
+     */
     public static boolean isFibonnaci(int n){
         int n1 = 0;
         int n2 = 1;
@@ -43,5 +61,37 @@ public class KKhambhlaLib {
             return true;
         }
         return false;
+    }
+
+    /**
+     * returns the least common multiple of 3 numbers
+     * @param num1 the first number
+     * @param num2 the second number
+     * @param num3 the third number
+     * @return the lcm of all 3
+     */
+    public static int leastCommonMultiple(int num1, int num2, int num3){
+        if (num1 == 0 || num2 == 0 || num3 == 0) {
+            return 0;
+        }
+        if (num1 == num2 || num1 == num3) {
+            return num1;
+        }
+        if (num2 == num3){
+            return num2;
+        }
+        int largest = num1;
+        if (num2 > num1 && num2 > num3){
+            largest = num2;
+        }
+        if (num3 > num1 && num3 > num2){
+            largest = num3;
+        }
+        else {
+            for(int i = largest; i > 0; i--);
+        }
+
+        return 0;
+
     }
 }
