@@ -51,16 +51,13 @@ public class KKhambhlaLib {
     public static boolean isFibonnaci(int n){
         int n1 = 0;
         int n2 = 1;
-        int sto = 0;
+        int sto;
         while(n1+n2 <= n){
             sto = n1;
             n1 = n2;
             n2 = sto + n2;
         }
-        if (n2 == n){
-            return true;
-        }
-        return false;
+        return n2 == n;
     }
 
     /**
