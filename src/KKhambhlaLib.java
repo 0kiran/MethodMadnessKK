@@ -71,27 +71,14 @@ public class KKhambhlaLib {
      * @return the lcm of all 3
      */
     public static int leastCommonMultiple(int num1, int num2, int num3){
-        if (num1 == 0 || num2 == 0 || num3 == 0) {
-            return 0;
-        }
-        if (num1 == num2 || num1 == num3) {
-            return num1;
-        }
-        if (num2 == num3){
-            return num2;
-        }
-        int largest = num1;
-        if (num2 > num1 && num2 > num3){
-            largest = num2;
-        }
-        if (num3 > num1 && num3 > num2){
-            largest = num3;
-        }
-        else {
-            for(int i = largest; i > 0; i--);
+
+        for(int i = 2; i < num1*num2*num3; i++){
+            if (i % num1 == 0 && i % num2 == 0 && i % num3 == 0){
+                return i;
+            }
         }
 
-        return 0;
+        return num1*num2*num3;
 
     }
 }
